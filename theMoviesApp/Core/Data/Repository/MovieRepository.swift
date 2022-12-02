@@ -23,6 +23,10 @@ final class MovieRepository {
         self.movieRemote = movieRemote
     }
     
+    static let sharedMovieInstance: MovieInstance = { remoteRepo in
+        return MovieRepository(movieRemote: remoteRepo)
+    }
+    
 }
 
 extension MovieRepository: MovieRepositoryProtocol {

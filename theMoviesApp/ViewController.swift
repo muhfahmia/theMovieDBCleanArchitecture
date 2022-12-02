@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let useCase = Injection.init().provideMovieUseCase()
+        let presenter = MoviePresenter(movieUseCase: useCase)
+        presenter.getMovie()
+        
     }
 }
 
